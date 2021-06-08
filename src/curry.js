@@ -39,3 +39,4 @@ function partial(fn, ...args){
         fn(...args,..._args)
     }
 }
+
