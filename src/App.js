@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useRef, useState} from 'react';
 import './App.css';
 
 const Error = () => {
@@ -38,7 +38,7 @@ const Tiger = () => {
  const ConfirmedTiger = withConfirm(Tiger)*/
 
 
-class App extends React.Component {
+/*class App extends React.Component {
     state = {
         error: true,
         success: true,
@@ -64,6 +64,25 @@ class App extends React.Component {
     </div>
   );
     }
+}*/
+
+const App = () => {
+    const input1 = useRef()
+    let [state,setState] = useState('')
+
+    const noControl = () => {
+        setState(input1.current.value)
+
+    }
+
+    return (
+        <div>
+            <input ref={input1} type="text"  />
+            <input type="text" />
+            <button onClick={noControl}></button>
+
+        </div>
+    )
 }
 
 export default App;
